@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
                 String width = activityMainBinding.edtWidth.getText().toString();
                 String height = activityMainBinding.edtHeight.getText().toString();
                 String length = activityMainBinding.edtLength.getText().toString();
-                if (width.isEmpty()) {
+                if (length.isEmpty()) {
+                    activityMainBinding.edtLength.setError("Masih kosong");
+                } else if (width.isEmpty()) {
                     activityMainBinding.edtWidth.setError("Masih kosong");
                 } else if (height.isEmpty()) {
                     activityMainBinding.edtHeight.setError("Masih kosong");
-                } else if (length.isEmpty()) {
-                    activityMainBinding.edtLength.setError("Masih kosong");
                 } else {
                     mainViewModel.calculate(width, height, length);
                     displayResult();
